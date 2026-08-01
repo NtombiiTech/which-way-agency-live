@@ -3,8 +3,11 @@ import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { HeroVideo } from "@/components/HeroVideo";
 import { FestivalHighlights } from "@/components/FestivalHighlights";
+import { InteractiveServices } from "@/components/InteractiveServices";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
+import { StoryChapter } from "@/components/StoryChapter";
+import { TrustedPartners } from "@/components/TrustedPartners";
 import { projects } from "@/lib/projects";
 
 const services = [
@@ -54,38 +57,11 @@ export default function HomePage() {
 
       <FestivalHighlights />
 
-      <section className="manifesto-section">
-        <Image src="/brand/concrete.webp" alt="" fill sizes="100vw" className="media-cover" />
-        <div className="manifesto-overlay" aria-hidden="true" />
-        <Reveal className="shell manifesto-copy">
-          <p>
-            Every brand has a story worth telling. Every experience should leave people with something they can feel, share and remember.
-          </p>
-        </Reveal>
-      </section>
+      <StoryChapter />
 
-      <section className="section shell home-services">
-        <Reveal className="services-intro">
-          <h2>Built around the experience.</h2>
-          <p>
-            From the first strategic question to the last guest leaving, we connect every part of the journey.
-          </p>
-          <Link className="text-link" href="/services">
-            Explore services <ArrowRight weight="bold" aria-hidden="true" />
-          </Link>
-        </Reveal>
+      <InteractiveServices />
 
-        <div className="service-index">
-          {services.map((service, index) => (
-            <Reveal key={service} delay={index * 0.05}>
-              <Link href="/services">
-                <strong>{service}</strong>
-                <ArrowRight weight="bold" aria-hidden="true" />
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      <TrustedPartners />
 
       <section className="home-close">
         <Image src="/brand/concrete.webp" alt="" fill sizes="100vw" className="media-cover" />
