@@ -65,17 +65,43 @@ export function StoryChapter() {
       });
 
       media.add("(max-width: 767px) and (prefers-reduced-motion: no-preference)", () => {
-        gsap.from(".story-line", {
-          opacity: 0.16,
-          y: 32,
-          stagger: 0.16,
-          duration: 0.8,
-          ease: "power3.out",
+        const lines = gsap.utils.toArray<HTMLElement>(".story-line");
+        const backdrops = gsap.utils.toArray<HTMLElement>(".story-backdrop");
+        const fragments = gsap.utils.toArray<HTMLElement>(".story-fragment");
+
+        gsap.set(lines, { opacity: 0.14, yPercent: 24 });
+        gsap.set(backdrops, { opacity: 0, scale: 1.08 });
+        gsap.set(backdrops[0], { opacity: 0.58 });
+        gsap.set(fragments, { scale: 0.72, rotate: -3 });
+        gsap.set(".story-action", { opacity: 0, y: 20 });
+
+        const timeline = gsap.timeline({
           scrollTrigger: {
-            trigger: ".story-lines",
-            start: "top 78%",
+            trigger: section.current,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 0.65,
           },
         });
+
+        lines.forEach((line, index) => {
+          const position = index * 0.9;
+
+          timeline
+            .to(backdrops[index], { opacity: 0.68, scale: 1, duration: 0.65, ease: "none" }, position)
+            .to(line, { opacity: 1, yPercent: 0, duration: 0.6, ease: "none" }, position)
+            .to(fragments[index], { scale: 1, rotate: 0, duration: 0.6, ease: "none" }, position + 0.06);
+
+          if (index > 0) {
+            timeline
+              .to(backdrops[index - 1], { opacity: 0, duration: 0.35, ease: "none" }, position)
+              .to(lines[index - 1], { opacity: 0.46, duration: 0.3, ease: "none" }, position);
+          }
+        });
+
+        timeline
+          .to(lines, { opacity: 1, duration: 0.45, ease: "none" }, 2.72)
+          .to(".story-action", { opacity: 1, y: 0, duration: 0.4, ease: "none" }, 2.76);
       });
 
       return () => media.revert();

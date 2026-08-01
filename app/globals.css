@@ -1027,11 +1027,14 @@ video {
 
 .partners-section {
   overflow: hidden;
-  border-top: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 72% 10%, rgba(224, 106, 66, 0.13), transparent 30rem),
-    #151717;
+  border-top: 1px solid rgba(23, 25, 25, 0.12);
+  background: #f3f0e9;
+  color: #171919;
   padding-block: clamp(7rem, 11vw, 11rem);
+}
+
+.partners-section .eyebrow {
+  color: #a84d33;
 }
 
 .partners-heading {
@@ -1055,7 +1058,7 @@ video {
 .partners-heading > p:last-child {
   max-width: 39ch;
   margin: 0 0 0.6rem;
-  color: var(--muted);
+  color: rgba(23, 25, 25, 0.68);
   line-height: 1.7;
 }
 
@@ -1081,62 +1084,32 @@ video {
 .partners-set {
   display: flex;
   flex: 0 0 auto;
-  gap: 0.85rem;
-  padding-right: 0.85rem;
+  align-items: center;
+  gap: clamp(3.25rem, 6vw, 6.75rem);
+  padding-right: clamp(3.25rem, 6vw, 6.75rem);
 }
 
-.partner-card {
-  position: relative;
-  width: clamp(168px, 16vw, 238px);
-  aspect-ratio: 1.35 / 1;
+.partner-mark {
+  display: flex;
   flex: 0 0 auto;
-  overflow: hidden;
-  background: #f3f0e9;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
 }
 
 .partner-logo {
+  width: auto;
+  height: var(--partner-logo-height, clamp(4.6rem, 6vw, 6.5rem));
+  max-width: none;
   object-fit: contain;
-  padding: clamp(1.65rem, 3vw, 2.8rem);
 }
 
-.premium-foods-mark {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  padding: 1.5rem;
-  color: #171919;
-  font-family: var(--font-display), sans-serif;
-  font-size: clamp(1.25rem, 2vw, 1.9rem);
-  font-weight: 500;
-  letter-spacing: -0.055em;
-  line-height: 0.8;
-}
-
-.premium-foods-mark > span:last-child {
-  display: grid;
-}
-
-.premium-foods-mark small {
-  margin-top: 0.38rem;
-  color: #c85e3c;
-  font-size: 0.55em;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.premium-foods-monogram {
-  display: grid;
-  width: 3.1rem;
-  aspect-ratio: 1;
-  place-items: center;
-  border: 1px solid rgba(23, 25, 25, 0.45);
-  border-radius: 50%;
-  font-size: 0.86rem;
-  letter-spacing: -0.04em;
-}
+.partner-mark--born-n-bread { --partner-logo-height: clamp(5.8rem, 8vw, 8.4rem); }
+.partner-mark--nyatee { --partner-logo-height: clamp(5.7rem, 7.8vw, 8.2rem); }
+.partner-mark--era { --partner-logo-height: clamp(3rem, 4.2vw, 4.5rem); }
+.partner-mark--premier { --partner-logo-height: clamp(3.2rem, 4.3vw, 4.65rem); }
+.partner-mark--vodacom { --partner-logo-height: clamp(2.8rem, 3.8vw, 4.1rem); }
+.partner-mark--hollywoodbets { --partner-logo-height: clamp(4.5rem, 6.2vw, 6.6rem); }
 
 @keyframes partners-travel {
   to { transform: translateX(-50%); }
@@ -2227,7 +2200,7 @@ video {
   .festival-film-event { margin-top: 0.65rem; font-size: 0.66rem; }
   .festival-case-link { min-height: 44px; margin-top: 0.7rem; }
   .story-stage,
-  .story-content { min-height: 92dvh; }
+  .story-content { min-height: 100dvh; }
   .story-content { padding-block: 7rem 6rem; }
   .story-wash {
     background:
@@ -2265,9 +2238,16 @@ video {
     mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
   }
   .partners-track { animation-duration: 25s; }
-  .partner-card { width: 170px; }
-  .premium-foods-mark { font-size: 1.25rem; }
-  .premium-foods-monogram { width: 2.65rem; }
+  .partners-set {
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+  .partner-mark--born-n-bread { --partner-logo-height: 5rem; }
+  .partner-mark--nyatee { --partner-logo-height: 4.9rem; }
+  .partner-mark--era { --partner-logo-height: 2.35rem; }
+  .partner-mark--premier { --partner-logo-height: 2.6rem; }
+  .partner-mark--vodacom { --partner-logo-height: 2.25rem; }
+  .partner-mark--hollywoodbets { --partner-logo-height: 3.9rem; }
   .home-close,
   .home-close-copy { min-height: 70dvh; }
   .page-hero { min-height: 68dvh; }
@@ -2360,6 +2340,14 @@ video {
   .footer-grid > div:first-child { grid-column: 1 / -1; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; }
   .skeleton-title { height: 80px; }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+  .story-chapter { min-height: 235dvh; }
+  .story-stage {
+    position: sticky;
+    top: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
