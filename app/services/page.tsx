@@ -55,18 +55,20 @@ export default function ServicesPage() {
 
       <section className="services-stack shell">
         {services.map((service) => (
-          <article className="service-panel" key={service.title}>
-            <Reveal className="service-panel-media">
-              <Image src={service.image} alt="" fill sizes="(max-width: 767px) 100vw, 48vw" className="media-cover" />
-            </Reveal>
-            <Reveal className="service-panel-copy" delay={0.08}>
-              <h2>{service.title}</h2>
-              <p>{service.copy}</p>
-              <ul aria-label={`${service.title} capabilities`}>
-                {service.capabilities.map((capability) => <li key={capability}>{capability}</li>)}
-              </ul>
-            </Reveal>
-          </article>
+          <div className="service-panel-stage" key={service.title}>
+            <article className="service-panel">
+              <Reveal className="service-panel-media">
+                <Image src={service.image} alt="" fill sizes="(max-width: 767px) 100vw, 48vw" className="media-cover" />
+              </Reveal>
+              <Reveal className="service-panel-copy" delay={0.08}>
+                <h2>{service.title}</h2>
+                <p>{service.copy}</p>
+                <ul aria-label={`${service.title} capabilities`}>
+                  {service.capabilities.map((capability) => <li key={capability}>{capability}</li>)}
+                </ul>
+              </Reveal>
+            </article>
+          </div>
         ))}
       </section>
 
