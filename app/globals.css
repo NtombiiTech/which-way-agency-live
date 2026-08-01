@@ -780,13 +780,18 @@ video {
 
 .story-chapter {
   position: relative;
+  min-height: 300dvh;
   background: #0d0e0e;
 }
 
 .story-stage {
-  position: relative;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
   min-height: 100dvh;
   overflow: hidden;
+  contain: paint;
+  isolation: isolate;
 }
 
 .story-backdrops,
@@ -801,10 +806,10 @@ video {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  filter: saturate(0.72) contrast(1.08);
+  transition: opacity 0.62s ease;
 }
 
-.story-backdrop:first-child {
+.story-backdrop.is-active {
   opacity: 0.62;
 }
 
@@ -850,7 +855,19 @@ video {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.08em 0.14em;
-  will-change: transform, opacity;
+  opacity: 0.14;
+  transform: translate3d(0, 1.5rem, 0);
+  transition: opacity 0.5s ease, transform 0.65s var(--ease-out);
+}
+
+.story-line.is-revealed {
+  opacity: 0.44;
+  transform: translate3d(0, 0, 0);
+}
+
+.story-line.is-current,
+.story-lines.is-complete .story-line {
+  opacity: 1;
 }
 
 .story-line:nth-child(2) {
@@ -864,8 +881,15 @@ video {
   height: clamp(2.1rem, 4.6vw, 4.8rem);
   overflow: hidden;
   border-radius: 999px;
+  opacity: 0.72;
+  transform: scale(0.78) rotate(-3deg);
   transform-origin: center;
-  will-change: transform;
+  transition: opacity 0.5s ease, transform 0.68s var(--ease-out);
+}
+
+.story-line.is-revealed .story-fragment {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
 
 .story-fragment-tall {
@@ -879,6 +903,16 @@ video {
 .story-action {
   align-self: flex-start;
   margin-top: clamp(2.75rem, 6vw, 5.5rem);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(0, 1.25rem, 0);
+  transition: border-color 0.25s ease, color 0.25s ease, opacity 0.45s ease, transform 0.6s var(--ease-out);
+}
+
+.story-action.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0);
 }
 
 .home-services-interactive {
@@ -1506,6 +1540,7 @@ video {
 .service-panel-media {
   position: relative;
   min-height: 520px;
+  transform-origin: center;
 }
 
 .service-panel-copy {
@@ -1513,6 +1548,27 @@ video {
   flex-direction: column;
   justify-content: center;
   padding: clamp(3rem, 7vw, 8rem);
+}
+
+.services-stack.has-motion .service-panel-media,
+.services-stack.has-motion .service-panel-copy {
+  transition: opacity 0.58s ease, transform 0.78s var(--ease-out);
+}
+
+.services-stack.has-motion .service-panel:not(.is-visible) .service-panel-media {
+  opacity: 0.78;
+  transform: scale(1.035);
+}
+
+.services-stack.has-motion .service-panel:not(.is-visible) .service-panel-copy {
+  opacity: 0.82;
+  transform: translate3d(0, 1.5rem, 0);
+}
+
+.services-stack.has-motion .service-panel.is-visible .service-panel-media,
+.services-stack.has-motion .service-panel.is-visible .service-panel-copy {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .service-panel-copy h2 {
@@ -2157,6 +2213,12 @@ video {
 
 @media (max-width: 767px) {
   :root { --shell: min(100% - 32px, 1480px); }
+  .global-grain { display: none; }
+  .site-header {
+    background: rgba(17, 18, 18, 0.97);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
   .section { padding-block: 5rem; }
   .brand-link { width: 150px; }
   .hero-copy {
@@ -2392,11 +2454,7 @@ video {
 }
 
 @media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
-  .story-chapter { min-height: 235dvh; }
-  .story-stage {
-    position: sticky;
-    top: 0;
-  }
+  .story-chapter { min-height: 240dvh; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2414,6 +2472,7 @@ video {
   .story-line,
   .story-fragment,
   .story-action { transform: none !important; opacity: 1 !important; }
+  .story-action { pointer-events: auto; }
   .media-cover { transition: none; }
   .festival-frame,
   .festival-film-copy { transform: none !important; opacity: 1 !important; }

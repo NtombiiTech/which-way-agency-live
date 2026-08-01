@@ -3,149 +3,125 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef, useState } from "react";
 
 const storyFrames = [
   { src: "/media/rnb-04.webp", alt: "Guests sharing a live music experience" },
   { src: "/media/mercedes-02.webp", alt: "A live event produced for Mercedes-Benz" },
   { src: "/media/amcor-04.webp", alt: "A community brand experience in motion" },
-];
+] as const;
 
 export function StoryChapter() {
-  const section = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const activeStepRef = useRef(0);
+  const frameRef = useRef<number | null>(null);
+  const [activeStep, setActiveStep] = useState(0);
 
-  useGSAP(
-    () => {
-      const media = gsap.matchMedia();
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
 
-      media.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
-        const lines = gsap.utils.toArray<HTMLElement>(".story-line");
-        const backdrops = gsap.utils.toArray<HTMLElement>(".story-backdrop");
-        const fragments = gsap.utils.toArray<HTMLElement>(".story-fragment");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-        gsap.set(lines, { opacity: 0.14, yPercent: 28 });
-        gsap.set(backdrops, { opacity: 0, scale: 1.08 });
-        gsap.set(fragments, { scale: 0.72, rotate: -3 });
-        gsap.set(".story-action", { opacity: 0, y: 24 });
+    if (reducedMotion.matches) {
+      return;
+    }
 
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: section.current,
-            start: "top top",
-            end: "+=210%",
-            pin: ".story-stage",
-            scrub: 0.8,
-            anticipatePin: 1,
-          },
-        });
+    const updateStep = () => {
+      frameRef.current = null;
 
-        lines.forEach((line, index) => {
-          const position = index * 1.05;
+      const rect = section.getBoundingClientRect();
+      const scrollDistance = Math.max(section.offsetHeight - window.innerHeight, 1);
+      const progress = Math.min(1, Math.max(0, -rect.top / scrollDistance));
+      const nextStep = Math.min(storyFrames.length - 1, Math.floor(progress * storyFrames.length));
 
-          timeline
-            .to(backdrops[index], { opacity: 0.72, scale: 1, duration: 0.8, ease: "none" }, position)
-            .to(line, { opacity: 1, yPercent: 0, duration: 0.7, ease: "none" }, position)
-            .to(fragments[index], { scale: 1, rotate: 0, duration: 0.7, ease: "none" }, position + 0.08);
+      if (nextStep !== activeStepRef.current) {
+        activeStepRef.current = nextStep;
+        setActiveStep(nextStep);
+      }
+    };
 
-          if (index > 0) {
-            timeline
-              .to(backdrops[index - 1], { opacity: 0, duration: 0.45, ease: "none" }, position)
-              .to(lines[index - 1], { opacity: 0.42, duration: 0.35, ease: "none" }, position);
-          }
-        });
+    const scheduleUpdate = () => {
+      if (frameRef.current !== null) return;
+      frameRef.current = window.requestAnimationFrame(updateStep);
+    };
 
-        timeline
-          .to(lines, { opacity: 1, duration: 0.55, ease: "none" }, 3.05)
-          .to(".story-action", { opacity: 1, y: 0, duration: 0.5, ease: "none" }, 3.12);
-      });
+    updateStep();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
 
-      media.add("(max-width: 767px) and (prefers-reduced-motion: no-preference)", () => {
-        const lines = gsap.utils.toArray<HTMLElement>(".story-line");
-        const backdrops = gsap.utils.toArray<HTMLElement>(".story-backdrop");
-        const fragments = gsap.utils.toArray<HTMLElement>(".story-fragment");
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
+    };
+  }, []);
 
-        gsap.set(lines, { opacity: 0.14, yPercent: 24 });
-        gsap.set(backdrops, { opacity: 0, scale: 1.08 });
-        gsap.set(backdrops[0], { opacity: 0.58 });
-        gsap.set(fragments, { scale: 0.72, rotate: -3 });
-        gsap.set(".story-action", { opacity: 0, y: 20 });
-
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: section.current,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.65,
-          },
-        });
-
-        lines.forEach((line, index) => {
-          const position = index * 0.9;
-
-          timeline
-            .to(backdrops[index], { opacity: 0.68, scale: 1, duration: 0.65, ease: "none" }, position)
-            .to(line, { opacity: 1, yPercent: 0, duration: 0.6, ease: "none" }, position)
-            .to(fragments[index], { scale: 1, rotate: 0, duration: 0.6, ease: "none" }, position + 0.06);
-
-          if (index > 0) {
-            timeline
-              .to(backdrops[index - 1], { opacity: 0, duration: 0.35, ease: "none" }, position)
-              .to(lines[index - 1], { opacity: 0.46, duration: 0.3, ease: "none" }, position);
-          }
-        });
-
-        timeline
-          .to(lines, { opacity: 1, duration: 0.45, ease: "none" }, 2.72)
-          .to(".story-action", { opacity: 1, y: 0, duration: 0.4, ease: "none" }, 2.76);
-      });
-
-      return () => media.revert();
-    },
-    { scope: section },
-  );
+  const storyComplete = activeStep === storyFrames.length - 1;
 
   return (
-    <section ref={section} className="story-chapter" aria-labelledby="story-heading">
+    <section ref={sectionRef} className="story-chapter" aria-labelledby="story-heading">
       <div className="story-stage">
         <div className="story-backdrops" aria-hidden="true">
-          {storyFrames.map((frame) => (
-            <Image key={frame.src} src={frame.src} alt="" fill sizes="100vw" className="story-backdrop" />
+          {storyFrames.map((frame, index) => (
+            <Image
+              key={frame.src}
+              src={frame.src}
+              alt=""
+              fill
+              sizes="100vw"
+              quality={60}
+              className={`story-backdrop${index === activeStep ? " is-active" : ""}`}
+            />
           ))}
         </div>
         <div className="story-wash" aria-hidden="true" />
 
         <div className="shell story-content">
           <p className="story-kicker">The stories people carry forward</p>
-          <h2 id="story-heading" className="story-lines">
-            <span className="story-line">
+          <h2 id="story-heading" className={`story-lines${storyComplete ? " is-complete" : ""}`}>
+            <span className={`story-line${activeStep >= 0 ? " is-revealed" : ""}${activeStep === 0 ? " is-current" : ""}`}>
               Every brand has a
               <span className="story-fragment">
-                <Image src={storyFrames[0].src} alt={storyFrames[0].alt} fill sizes="160px" />
+                <Image
+                  src={storyFrames[0].src}
+                  alt={storyFrames[0].alt}
+                  fill
+                  sizes="(max-width: 767px) 72px, 160px"
+                  quality={60}
+                />
               </span>
               story.
             </span>
-            <span className="story-line">
+            <span className={`story-line${activeStep >= 1 ? " is-revealed" : ""}${activeStep === 1 ? " is-current" : ""}`}>
               Worth
               <span className="story-fragment story-fragment-tall">
-                <Image src={storyFrames[1].src} alt={storyFrames[1].alt} fill sizes="160px" />
+                <Image
+                  src={storyFrames[1].src}
+                  alt={storyFrames[1].alt}
+                  fill
+                  sizes="(max-width: 767px) 56px, 112px"
+                  quality={60}
+                />
               </span>
               telling.
             </span>
-            <span className="story-line">
+            <span className={`story-line${activeStep >= 2 ? " is-revealed" : ""}${activeStep === 2 ? " is-current" : ""}`}>
               Worth
               <span className="story-fragment">
-                <Image src={storyFrames[2].src} alt={storyFrames[2].alt} fill sizes="160px" />
+                <Image
+                  src={storyFrames[2].src}
+                  alt={storyFrames[2].alt}
+                  fill
+                  sizes="(max-width: 767px) 72px, 160px"
+                  quality={60}
+                />
               </span>
               remembering.
             </span>
           </h2>
 
-          <Link className="story-action text-link" href="/work">
+          <Link className={`story-action text-link${storyComplete ? " is-visible" : ""}`} href="/work">
             Explore the stories <ArrowRight weight="bold" aria-hidden="true" />
           </Link>
         </div>
