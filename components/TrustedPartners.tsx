@@ -11,9 +11,10 @@ const partners = [
 
 function PartnerMark({ partner, duplicate = false }: { partner: (typeof partners)[number]; duplicate?: boolean }) {
   return (
-    <span
+    <article
       className={`partner-mark partner-mark--${partner.style}`}
       aria-hidden={duplicate || undefined}
+      aria-label={duplicate ? undefined : partner.name}
     >
       <Image
         src={partner.image}
@@ -23,7 +24,7 @@ function PartnerMark({ partner, duplicate = false }: { partner: (typeof partners
         sizes="(max-width: 767px) 240px, 320px"
         className="partner-logo"
       />
-    </span>
+    </article>
   );
 }
 
