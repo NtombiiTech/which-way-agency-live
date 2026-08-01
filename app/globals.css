@@ -630,7 +630,14 @@ video {
   cursor: pointer;
   transform: translate(-50%, -50%);
   backdrop-filter: blur(14px);
-  transition: color 0.3s ease, background-color 0.3s ease, transform 0.35s var(--ease-out);
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.24s ease, visibility 0.24s ease, transform 0.35s var(--ease-out);
+}
+
+.festival-play.is-playing {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.86);
 }
 
 .festival-play:hover {
@@ -680,6 +687,13 @@ video {
   font: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
+}
+
+.festival-frame-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
 }
 
 .festival-frame-meta svg {
@@ -1182,10 +1196,17 @@ video {
   background: var(--line);
 }
 
+.service-panel-stage {
+  position: relative;
+  min-height: calc(118dvh - 72px);
+  background: var(--charcoal);
+}
+
 .service-panel {
   position: sticky;
   top: 72px;
   display: grid;
+  height: calc(100dvh - 72px);
   min-height: calc(100dvh - 72px);
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
@@ -1994,16 +2015,24 @@ video {
   .service-panel {
     position: sticky;
     top: 72px;
+    height: calc(100dvh - 72px);
     min-height: calc(100dvh - 72px);
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(38dvh, 45dvh) auto;
+    grid-template-rows: minmax(30dvh, 34dvh) minmax(0, 1fr);
     box-shadow: 0 -24px 52px rgba(17, 18, 18, 0.32);
   }
+  .service-panel-stage { min-height: calc(142dvh - 72px); }
   .service-panel-media { min-height: 0; }
-  .service-panel-copy { padding: 2rem 1.25rem 3rem; }
-  .service-panel-copy h2 { font-size: clamp(2.55rem, 12vw, 4.2rem); }
-  .service-panel-copy > p { margin-top: 1.25rem; line-height: 1.6; }
-  .service-panel-copy ul { margin-top: 1.5rem; padding-top: 1.25rem; }
+  .service-panel-copy { justify-content: flex-start; padding: 1.5rem 1.25rem 1.75rem; }
+  .service-panel-copy h2 { font-size: clamp(2.25rem, 10.5vw, 3.7rem); }
+  .service-panel-copy > p { margin-top: 0.9rem; font-size: 0.9rem; line-height: 1.5; }
+  .service-panel-copy ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  .service-panel-copy li { font-size: 0.72rem; line-height: 1.35; }
   .about-hero,
   .about-hero-copy { min-height: 76dvh; }
   .values-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
@@ -2034,7 +2063,8 @@ video {
   .media-cover { transition: none; }
   .festival-frame,
   .festival-film-copy { transform: none !important; opacity: 1 !important; }
-  .service-panel { position: relative; top: auto; min-height: auto; }
+  .service-panel-stage { min-height: auto; }
+  .service-panel { position: relative; top: auto; height: auto; min-height: auto; }
 }
 
 @media (prefers-reduced-transparency: reduce) {
