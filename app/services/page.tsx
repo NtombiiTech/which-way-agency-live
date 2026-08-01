@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/Reveal";
+import { ServicePanel } from "@/components/ServicePanel";
+import { ServicesStack } from "@/components/ServicesStack";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -53,24 +54,11 @@ export default function ServicesPage() {
         </Reveal>
       </section>
 
-      <section className="services-stack shell">
+      <ServicesStack>
         {services.map((service) => (
-          <div className="service-panel-stage" key={service.title}>
-            <article className="service-panel">
-              <Reveal className="service-panel-media">
-                <Image src={service.image} alt="" fill sizes="(max-width: 767px) 100vw, 48vw" className="media-cover" />
-              </Reveal>
-              <Reveal className="service-panel-copy" delay={0.08}>
-                <h2>{service.title}</h2>
-                <p>{service.copy}</p>
-                <ul aria-label={`${service.title} capabilities`}>
-                  {service.capabilities.map((capability) => <li key={capability}>{capability}</li>)}
-                </ul>
-              </Reveal>
-            </article>
-          </div>
+          <ServicePanel key={service.title} {...service} />
         ))}
-      </section>
+      </ServicesStack>
 
       <section className="section shell services-close">
         <Reveal>
