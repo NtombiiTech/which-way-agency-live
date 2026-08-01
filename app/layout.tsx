@@ -6,8 +6,8 @@ import "./globals.css";
 
 const archivo = localFont({
   src: [
-    { path: "./fonts/archivo.woff2", style: "normal" },
-    { path: "./fonts/archivo-italic.woff2", style: "italic" },
+    { path: "./fonts/archivo.woff2", weight: "100 900", style: "normal" },
+    { path: "./fonts/archivo-italic.woff2", weight: "100 900", style: "italic" },
   ],
   variable: "--font-display",
   display: "swap",
@@ -15,6 +15,7 @@ const archivo = localFont({
 
 const manrope = localFont({
   src: "./fonts/manrope.woff2",
+  weight: "200 800",
   variable: "--font-body",
   display: "swap",
 });
