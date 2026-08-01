@@ -169,23 +169,37 @@ export function FestivalHighlights() {
                 <div className="festival-frame-wash" aria-hidden="true" />
                 <button
                   type="button"
-                  className="festival-play"
+                  className={`festival-play${isPlaying ? " is-playing" : ""}`}
                   onClick={() => togglePlayback(film.id)}
-                  aria-label={`${isPlaying ? "Pause" : "Play"} ${film.title}`}
+                  aria-label={`Play ${film.title}`}
+                  aria-hidden={isPlaying}
+                  tabIndex={isPlaying ? -1 : 0}
                 >
-                  {isPlaying ? <Pause weight="fill" aria-hidden="true" /> : <Play weight="fill" aria-hidden="true" />}
-                  <span>{isPlaying ? "Pause film" : "Play film"}</span>
+                  <Play weight="fill" aria-hidden="true" />
+                  <span>Play film</span>
                 </button>
                 <div className="festival-frame-meta">
                   <span>{film.duration}</span>
-                  <button
-                    type="button"
-                    onClick={() => toggleSound(film.id)}
-                    aria-label={`${hasSound ? "Mute" : "Turn sound on for"} ${film.title}`}
-                  >
-                    {hasSound ? <SpeakerHigh weight="fill" aria-hidden="true" /> : <SpeakerSlash weight="fill" aria-hidden="true" />}
-                    {hasSound ? "Sound on" : "Sound off"}
-                  </button>
+                  <div className="festival-frame-controls">
+                    {isPlaying && (
+                      <button
+                        type="button"
+                        onClick={() => togglePlayback(film.id)}
+                        aria-label={`Pause ${film.title}`}
+                      >
+                        <Pause weight="fill" aria-hidden="true" />
+                        Pause
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => toggleSound(film.id)}
+                      aria-label={`${hasSound ? "Mute" : "Turn sound on for"} ${film.title}`}
+                    >
+                      {hasSound ? <SpeakerHigh weight="fill" aria-hidden="true" /> : <SpeakerSlash weight="fill" aria-hidden="true" />}
+                      {hasSound ? "Sound on" : "Sound off"}
+                    </button>
+                  </div>
                 </div>
               </div>
 
