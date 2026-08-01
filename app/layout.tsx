@@ -13,13 +13,6 @@ const archivo = localFont({
   display: "swap",
 });
 
-const manrope = localFont({
-  src: "./fonts/manrope.woff2",
-  weight: "200 800",
-  variable: "--font-body",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://whichwayagency.co.za"),
   title: {
@@ -47,7 +40,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${manrope.variable}`}>
+    <html lang="en" className={archivo.variable}>
       <body>
         <div className="global-grain" aria-hidden="true" />
         <SiteHeader />
