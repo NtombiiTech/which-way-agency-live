@@ -1027,9 +1027,11 @@ video {
 
 .partners-section {
   overflow: hidden;
-  border-top: 1px solid rgba(23, 25, 25, 0.12);
-  background: #f3f0e9;
-  color: #171919;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(224, 106, 66, 0.08), transparent 30rem),
+    var(--charcoal);
+  color: var(--bone);
   padding-block: clamp(7rem, 11vw, 11rem);
 }
 
@@ -1058,16 +1060,17 @@ video {
 .partners-heading > p:last-child {
   max-width: 39ch;
   margin: 0 0 0.6rem;
-  color: rgba(23, 25, 25, 0.68);
+  color: var(--muted);
   line-height: 1.7;
 }
 
 .partners-window {
   position: relative;
-  width: 100%;
+  width: var(--shell);
+  margin-inline: auto;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  background: #fff;
+  padding-block: clamp(1.75rem, 3.5vw, 3rem);
 }
 
 .partners-track {
@@ -1087,6 +1090,10 @@ video {
   align-items: center;
   gap: clamp(3.25rem, 6vw, 6.75rem);
   padding-right: clamp(3.25rem, 6vw, 6.75rem);
+}
+
+.partners-set:first-child {
+  padding-left: clamp(2rem, 4vw, 4rem);
 }
 
 .partner-mark {
@@ -2234,14 +2241,15 @@ video {
   .partners-heading > p:last-child { margin: 0; }
   .partners-window {
     overflow-x: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+    width: calc(100% - 32px);
+    padding-block: 1.45rem;
   }
   .partners-track { animation-duration: 25s; }
   .partners-set {
     gap: 3rem;
     padding-right: 3rem;
   }
+  .partners-set:first-child { padding-left: 1.5rem; }
   .partner-mark--born-n-bread { --partner-logo-height: 5rem; }
   .partner-mark--nyatee { --partner-logo-height: 4.9rem; }
   .partner-mark--era { --partner-logo-height: 2.35rem; }
