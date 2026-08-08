@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { FestivalHighlights } from "@/components/FestivalHighlights";
+import { HeroVideo } from "@/components/HeroVideo";
 import { Reveal } from "@/components/Reveal";
 import { TrustedPartners } from "@/components/TrustedPartners";
 import { projects, type Project } from "@/lib/projects";
@@ -57,6 +59,8 @@ export default function HomePage() {
   return (
     <>
       <main>
+        <HeroVideo />
+
         <section className="shell home-services-first" aria-labelledby="home-services-heading">
           <Reveal className="home-services-statement">
             <p className="eyebrow">What we do</p>
@@ -104,6 +108,8 @@ export default function HomePage() {
             </Reveal>
           </div>
         </section>
+
+        <FestivalHighlights />
 
         <TrustedPartners />
 
