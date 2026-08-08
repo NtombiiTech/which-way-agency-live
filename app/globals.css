@@ -366,6 +366,204 @@ video {
   to { transform: translateX(-50%); }
 }
 
+/* Homepage structure */
+.home-services-first {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  gap: clamp(4rem, 10vw, 10rem);
+  align-items: end;
+  padding-top: clamp(10rem, 18vw, 16rem);
+  padding-bottom: clamp(7rem, 12vw, 11rem);
+}
+
+.home-services-statement {
+  max-width: 820px;
+}
+
+.home-services-statement h1 {
+  max-width: 10.5ch;
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(3.4rem, 7.2vw, 7.8rem);
+  font-weight: var(--type-display);
+  letter-spacing: -0.065em;
+  line-height: 0.91;
+  text-wrap: balance;
+}
+
+.home-services-statement > p:not(.eyebrow) {
+  max-width: 48ch;
+  margin: 1.7rem 0 0;
+  color: var(--muted);
+  font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+  line-height: 1.72;
+}
+
+.home-services-statement .text-link {
+  margin-top: 2.1rem;
+}
+
+.home-service-index {
+  border-top: 1px solid var(--line);
+}
+
+.home-service-index > div {
+  border-bottom: 1px solid var(--line);
+}
+
+.home-service-index a {
+  display: grid;
+  min-height: 80px;
+  grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding-block: 1rem;
+  transition: color 0.28s ease, padding-left 0.35s var(--ease-out);
+}
+
+.home-service-index a:hover {
+  padding-left: 0.65rem;
+  color: var(--ember);
+}
+
+.home-service-index span {
+  color: var(--muted);
+  font-size: 0.67rem;
+  font-weight: var(--type-label);
+  letter-spacing: 0.16em;
+}
+
+.home-service-index strong {
+  font-size: clamp(1.25rem, 2.1vw, 2.1rem);
+  font-weight: var(--type-body);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.home-service-index svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--ember);
+}
+
+.home-field {
+  border-top: 1px solid var(--line);
+  padding-block: clamp(7rem, 12vw, 12rem);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(224, 106, 66, 0.09), transparent 35rem),
+    #0d0e0e;
+}
+
+.field-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+  gap: 2rem 5rem;
+  align-items: end;
+  margin-bottom: clamp(5rem, 9vw, 9rem);
+}
+
+.field-intro .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.field-intro h2 {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(3rem, 6.8vw, 7rem);
+  font-weight: var(--type-display);
+  letter-spacing: -0.065em;
+  line-height: 0.91;
+}
+
+.field-intro > p:last-child {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.field-projects {
+  display: grid;
+  gap: clamp(7rem, 13vw, 13rem);
+}
+
+.field-project-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+}
+
+.field-project-label {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.67rem;
+  font-weight: var(--type-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.field-project-heading h3 {
+  max-width: 20ch;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  font-weight: var(--type-display);
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.field-project-heading > a {
+  display: inline-flex;
+  min-height: 44px;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.65rem;
+  border-bottom: 1px solid var(--ember);
+  font-size: 0.68rem;
+  font-weight: var(--type-label);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.field-project-heading > a svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--ember);
+}
+
+.field-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.7rem, 1.2vw, 1.25rem);
+}
+
+.field-gallery-item {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--surface-raised);
+}
+
+.field-gallery-item > a {
+  position: absolute;
+  inset: 0;
+}
+
+.field-gallery-item:hover .media-cover {
+  transform: scale(1.04);
+}
+
+.field-all-work {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(6rem, 10vw, 10rem);
+}
+
 /* Section headings and projects */
 .section-heading {
   max-width: 760px;
@@ -2139,6 +2337,12 @@ video {
 
 @media (max-width: 1023px) {
   :root { --shell: min(100% - 36px, 1480px); }
+  .home-services-first {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+  .home-services-statement { max-width: 760px; }
+  .field-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .nav-shell { grid-template-columns: 1fr auto; }
   .desktop-nav,
   .nav-cta { display: none; }
@@ -2213,6 +2417,59 @@ video {
 
 @media (max-width: 767px) {
   :root { --shell: min(100% - 32px, 1480px); }
+  .home-services-first {
+    gap: 4.5rem;
+    padding-top: 8.5rem;
+    padding-bottom: 6.5rem;
+  }
+  .home-services-statement h1 {
+    max-width: 11ch;
+    font-size: clamp(3rem, 14vw, 4.8rem);
+    line-height: 0.93;
+  }
+  .home-services-statement > p:not(.eyebrow) {
+    margin-top: 1.4rem;
+    font-size: 0.94rem;
+  }
+  .home-service-index a {
+    min-height: 66px;
+    grid-template-columns: 2rem minmax(0, 1fr) auto;
+    gap: 0.65rem;
+    padding-block: 0.8rem;
+  }
+  .home-service-index strong { font-size: clamp(1.15rem, 5.5vw, 1.5rem); }
+  .home-field { padding-block: 6.5rem 8rem; }
+  .field-intro {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+    margin-bottom: 5rem;
+  }
+  .field-intro .eyebrow { grid-column: 1; }
+  .field-intro h2 {
+    max-width: 9ch;
+    font-size: clamp(3rem, 14vw, 4.8rem);
+  }
+  .field-intro > p:last-child { font-size: 0.92rem; }
+  .field-projects { gap: 6.5rem; }
+  .field-project-heading {
+    display: block;
+    margin-bottom: 1.35rem;
+    padding-top: 1.15rem;
+  }
+  .field-project-heading h3 {
+    max-width: 17ch;
+    font-size: clamp(1.85rem, 8.8vw, 2.8rem);
+  }
+  .field-project-heading > a {
+    margin-top: 1rem;
+    font-size: 0.62rem;
+  }
+  .field-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+  .field-gallery-item { aspect-ratio: 4 / 5; }
+  .field-all-work { margin-top: 6rem; }
   .global-grain { display: none; }
   .site-header {
     background: rgba(17, 18, 18, 0.97);
