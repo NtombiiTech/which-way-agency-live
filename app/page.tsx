@@ -120,14 +120,15 @@ export default function HomePage() {
             />
           </Reveal>
           <Reveal className="home-founder-copy" delay={0.08}>
-            <p className="eyebrow">Founder and creative director</p>
+            <p className="eyebrow">Our founder</p>
             <h2 id="home-founder-heading">Boxer Ngwenya</h2>
+            <p className="home-founder-role">Founder &amp; Creative Director</p>
             <blockquote>
               “Which Way is a home for ideas, talent, brands and experiences that bring people
               together.”
             </blockquote>
-            <Link className="text-link" href="/about">
-              Meet the founder <ArrowRight weight="bold" aria-hidden="true" />
+            <Link className="button button-primary" href="/about">
+              Meet Boxer <ArrowRight weight="bold" aria-hidden="true" />
             </Link>
           </Reveal>
         </div>
@@ -136,25 +137,30 @@ export default function HomePage() {
       <FestivalHighlights />
 
       <section className="home-talent" aria-labelledby="home-talent-heading">
-        <Image
-          src="/talent/lvovo-derrango.webp"
-          alt="L’vovo Derrango"
-          fill
-          sizes="100vw"
-          className="media-cover home-talent-image"
-        />
-        <div className="home-talent-scrim" aria-hidden="true" />
-        <Reveal className="shell home-talent-copy">
-          <p className="eyebrow">New signing · Artist management</p>
-          <h2 id="home-talent-heading">L’vovo Derrango</h2>
-          <p>
-            An award-winning voice in South African kwaito. The legacy is established. The next
-            chapter is being written.
-          </p>
-          <Link className="button button-primary" href="/talent">
-            Meet L’vovo <ArrowRight weight="bold" aria-hidden="true" />
-          </Link>
-        </Reveal>
+        <div className="shell home-talent-grid">
+          <Reveal className="home-talent-portrait">
+            <Image
+              src="/talent/lvovo-derrango.webp"
+              alt="L’vovo Derrango"
+              fill
+              sizes="(max-width: 767px) 100vw, 55vw"
+              className="media-cover home-talent-image"
+            />
+            <div className="home-talent-image-shade" aria-hidden="true" />
+          </Reveal>
+          <Reveal className="home-talent-copy" delay={0.08}>
+            <p className="eyebrow">New signing</p>
+            <h2 id="home-talent-heading"><span>L’vovo</span><span>Derrango</span></h2>
+            <p className="home-talent-role">A defining voice in South African kwaito.</p>
+            <p className="home-talent-statement">
+              The legacy is established.<br />
+              The next chapter is being written.
+            </p>
+            <Link className="button button-primary" href="/talent">
+              Meet L’vovo <ArrowRight weight="bold" aria-hidden="true" />
+            </Link>
+          </Reveal>
+        </div>
       </section>
 
       <TrustedPartners />
