@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 const navigation = [
   { href: "/work", label: "Work" },
   { href: "/services", label: "Services" },
+  { href: "/talent", label: "Talent" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

@@ -24,6 +24,7 @@ export function SiteFooter() {
           <p className="footer-label">Navigate</p>
           <Link href="/work">View our work</Link>
           <Link href="/services">Services</Link>
+          <Link href="/talent">Talent</Link>
           <Link href="/about">About</Link>
         </div>
         <div>

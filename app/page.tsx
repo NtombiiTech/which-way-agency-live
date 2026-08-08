@@ -33,7 +33,7 @@ function ProjectGallery({ project, index }: { project: Project; index: number })
       </Reveal>
 
       <div className="field-gallery">
-        {project.gallery.map((image, imageIndex) => (
+        {project.gallery.slice(0, 4).map((image, imageIndex) => (
           <Reveal
             key={image.src}
             className="field-gallery-item"
@@ -58,10 +58,9 @@ function ProjectGallery({ project, index }: { project: Project; index: number })
 export default function HomePage() {
   return (
     <>
-      <main>
-        <HeroVideo />
+      <HeroVideo />
 
-        <section className="shell home-services-first" aria-labelledby="home-services-heading">
+      <section className="shell home-services-first" aria-labelledby="home-services-heading">
           <Reveal className="home-services-statement">
             <p className="eyebrow">What we do</p>
             <h1 id="home-services-heading">We build culture through experiences.</h1>
@@ -85,9 +84,9 @@ export default function HomePage() {
               </Reveal>
             ))}
           </nav>
-        </section>
+      </section>
 
-        <section className="home-field" aria-labelledby="field-heading">
+      <section className="home-field" aria-labelledby="field-heading">
           <div className="shell">
             <Reveal className="field-intro">
               <p className="eyebrow">The field</p>
@@ -107,24 +106,70 @@ export default function HomePage() {
               </Link>
             </Reveal>
           </div>
-        </section>
+      </section>
 
-        <FestivalHighlights />
-
-        <TrustedPartners />
-
-        <section className="home-close">
-          <Image src="/brand/concrete.webp" alt="" fill sizes="100vw" className="media-cover" />
-          <div className="home-close-overlay" aria-hidden="true" />
-          <Reveal className="shell home-close-copy">
-            <p className="home-close-kicker">Have a project in mind?</p>
-            <h2>Your next experience starts with a clear direction.</h2>
-            <Link className="button button-primary" href="/proposal">
-              Request proposal <ArrowRight weight="bold" aria-hidden="true" />
+      <section className="home-founder" aria-labelledby="home-founder-heading">
+        <div className="shell home-founder-grid">
+          <Reveal className="home-founder-portrait">
+            <Image
+              src="/brand/founder-boxer-ngwenya-2026.webp"
+              alt="Boxer Ngwenya, founder of Which Way Agency"
+              fill
+              sizes="(max-width: 767px) 100vw, 48vw"
+              className="media-cover"
+            />
+          </Reveal>
+          <Reveal className="home-founder-copy" delay={0.08}>
+            <p className="eyebrow">Founder and creative director</p>
+            <h2 id="home-founder-heading">Boxer Ngwenya</h2>
+            <blockquote>
+              “Which Way is a home for ideas, talent, brands and experiences that bring people
+              together.”
+            </blockquote>
+            <Link className="text-link" href="/about">
+              Meet the founder <ArrowRight weight="bold" aria-hidden="true" />
             </Link>
           </Reveal>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      <FestivalHighlights />
+
+      <section className="home-talent" aria-labelledby="home-talent-heading">
+        <Image
+          src="/talent/lvovo-derrango.webp"
+          alt="L’vovo Derrango"
+          fill
+          sizes="100vw"
+          className="media-cover home-talent-image"
+        />
+        <div className="home-talent-scrim" aria-hidden="true" />
+        <Reveal className="shell home-talent-copy">
+          <p className="eyebrow">New signing · Artist management</p>
+          <h2 id="home-talent-heading">L’vovo Derrango</h2>
+          <p>
+            An award-winning voice in South African kwaito. The legacy is established. The next
+            chapter is being written.
+          </p>
+          <Link className="button button-primary" href="/talent">
+            Meet L’vovo <ArrowRight weight="bold" aria-hidden="true" />
+          </Link>
+        </Reveal>
+      </section>
+
+      <TrustedPartners />
+
+      <section className="home-close">
+        <Image src="/brand/concrete.webp" alt="" fill sizes="100vw" className="media-cover" />
+        <div className="home-close-overlay" aria-hidden="true" />
+        <Reveal className="shell home-close-copy">
+          <p className="home-close-kicker">Have a project in mind?</p>
+          <h2>Your next experience starts with a clear direction.</h2>
+          <Link className="button button-primary" href="/proposal">
+            Request proposal <ArrowRight weight="bold" aria-hidden="true" />
+          </Link>
+        </Reveal>
+      </section>
     </>
   );
 }
