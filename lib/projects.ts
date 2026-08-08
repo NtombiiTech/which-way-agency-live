@@ -95,6 +95,9 @@ export const projects: Project[] = [
     services: ["Event production", "Programme flow", "Technical coordination", "Guest experience"],
     cover: "/media/mercedes-01.webp",
     gallery: [
+      { src: "/media/mercedes-05.webp", alt: "Speaker addressing guests at the Mercedes-Benz Sandton wellness workshop" },
+      { src: "/media/mercedes-04.webp", alt: "Guests sharing a light moment during the workplace wellness event" },
+      { src: "/media/mercedes-06.webp", alt: "Panel participant during the workplace mental health conversation" },
       { src: "/media/mercedes-01.webp", alt: "Welcome stage at the Mercedes-Benz Sandton wellness workshop" },
       { src: "/media/mercedes-02.webp", alt: "Speakers addressing guests at the workplace wellness workshop", portrait: true },
       { src: "/media/mercedes-03.webp", alt: "Completed event setup at Mercedes-Benz Sandton" },
@@ -117,8 +120,10 @@ export const projects: Project[] = [
     impact:
       "The festival environment supported both community participation and visible partner presence. Verified attendance and partner results will be added when supplied.",
     services: ["Festival experience", "Brand activation", "Audience planning", "Event delivery"],
-    cover: "/media/amcor-06.webp",
+    cover: "/media/amcor-07.webp",
     gallery: [
+      { src: "/media/amcor-07.webp", alt: "Live performer at the Newcastle Amcor Dam Music Festival", portrait: true },
+      { src: "/media/amcor-08.webp", alt: "Newcastle Amcor Dam Music Festival 2023 event artwork" },
       { src: "/media/amcor-06.webp", alt: "Brand activation team at the Newcastle Amcor Dam Music Festival" },
       { src: "/media/amcor-04.webp", alt: "Partner hospitality activation at the outdoor festival" },
       { src: "/media/amcor-03.webp", alt: "Family activity area at the Newcastle Amcor Dam Music Festival" },
