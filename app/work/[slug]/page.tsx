@@ -26,16 +26,15 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
   return (
     <article>
-      <section className="case-hero">
-        <Image src={project.cover} alt={project.title} fill priority sizes="100vw" className="media-cover" />
-        <div className="case-hero-overlay" aria-hidden="true" />
-        <div className="shell case-hero-copy">
+      <header className="shell case-header">
+        <Reveal>
           <Link className="back-link" href="/work">
             <ArrowLeft weight="bold" aria-hidden="true" /> Back to work
           </Link>
+          <p className="eyebrow">{project.category} · {project.year}</p>
           <h1>{project.title}</h1>
-        </div>
-      </section>
+        </Reveal>
+      </header>
 
       <section className="section shell case-intro">
         <Reveal className="case-summary">

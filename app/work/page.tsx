@@ -11,6 +11,7 @@ const workPageOrder = [
   "mercedes-benz-mental-health-workshop",
   "community-giving-initiative-2025",
   "rnb-soulful-groove-december-2024",
+  "newcastle-amcor-dam-festival-2024",
   "newcastle-amcor-dam-festival-2023",
 ];
 

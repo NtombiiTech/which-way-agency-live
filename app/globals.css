@@ -1653,6 +1653,31 @@ main:has(.home-close) + .site-footer .footer-lead {
 }
 
 /* Case study */
+.case-header {
+  border-bottom: 1px solid var(--line);
+  padding-top: clamp(8.5rem, 14vw, 12rem);
+  padding-bottom: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.case-header .back-link {
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.case-header .eyebrow {
+  margin-bottom: 1.25rem;
+}
+
+.case-header h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(3.1rem, 6.5vw, 6.75rem);
+  font-weight: var(--type-display);
+  letter-spacing: -0.065em;
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
 .case-hero {
   position: relative;
   min-height: 100dvh;
@@ -1981,6 +2006,23 @@ main:has(.home-close) + .site-footer .footer-lead {
 }
 
 /* About */
+.interior-heading {
+  border-bottom: 1px solid var(--line);
+  padding-top: clamp(9rem, 15vw, 13rem);
+  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+
+.interior-heading h1 {
+  max-width: 17ch;
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(3.25rem, 6.5vw, 6.6rem);
+  font-weight: var(--type-display);
+  letter-spacing: -0.065em;
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
 .about-hero {
   position: relative;
   min-height: 92dvh;
@@ -2135,6 +2177,46 @@ main:has(.home-close) + .site-footer .footer-lead {
 /* Artist management */
 .talent-profile {
   background: #0d0e0e;
+}
+
+.talent-heading h1 span {
+  display: block;
+}
+
+.talent-heading > div > p:last-child {
+  max-width: 34ch;
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.talent-profile-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.68fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: end;
+  padding-top: clamp(4rem, 8vw, 7rem);
+}
+
+.talent-profile-portrait-inline {
+  aspect-ratio: 4 / 5;
+  max-height: 720px;
+}
+
+.talent-profile-intro-copy {
+  max-width: 34rem;
+  padding-bottom: clamp(1rem, 5vw, 4rem);
+}
+
+.talent-profile-intro-copy > p:last-child {
+  margin: 1.25rem 0 0;
+  color: var(--bone);
+  font-size: clamp(1.35rem, 2.4vw, 2.2rem);
+  font-weight: var(--type-display);
+  letter-spacing: -0.035em;
+  line-height: 1.18;
+  text-wrap: balance;
 }
 
 .talent-profile-hero {
@@ -3111,6 +3193,45 @@ main:has(.home-close) + .site-footer .footer-lead {
 
 @media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
   .story-chapter { min-height: 240dvh; }
+}
+
+@media (max-width: 767px) {
+  .interior-heading,
+  .case-header {
+    padding-top: 8.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .interior-heading h1,
+  .case-header h1 {
+    font-size: clamp(2.9rem, 14vw, 4.7rem);
+    line-height: 0.92;
+  }
+
+  .talent-profile-intro {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .talent-profile-portrait-inline {
+    width: 100%;
+    height: auto;
+    max-height: 68dvh;
+    aspect-ratio: 4 / 5;
+  }
+
+  .talent-profile-intro-copy {
+    padding: 0 0 1rem;
+  }
+
+  .talent-editorial {
+    padding-top: 4.5rem;
+  }
+
+  .case-header .back-link {
+    margin-bottom: 3.5rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

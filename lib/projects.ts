@@ -108,26 +108,48 @@ export const projects: Project[] = [
   },
   {
     slug: "newcastle-amcor-dam-festival-2023",
-    title: "Newcastle Amcor Dam Music Festival",
-    shortTitle: "Amcor Dam Festival",
+    title: "Newcastle Amcor Dam Music Festival — 2023",
+    shortTitle: "Amcor Dam Festival — 2023",
     client: "Newcastle Amcor Dam Music Festival",
     year: "2023",
     location: "Newcastle, KwaZulu-Natal",
     category: "Festival and Activation",
     summary:
-      "A large outdoor festival where live entertainment, family activity and partner activations shared one energetic landscape.",
+      "The 2023 edition of Newcastle's outdoor music festival, bringing live entertainment and community audiences together at Amcor Dam.",
     brief:
-      "Build a welcoming festival experience for varied audiences while giving commercial partners clear, useful opportunities to participate in the day.",
+      "Support a welcoming outdoor festival experience built around live performance, community participation and a strong sense of place.",
     response:
-      "Which Way brought together audience zones, partner touchpoints, hospitality and live-event moments across the outdoor site.",
+      "Which Way supported the live-event environment and audience experience across the Amcor Dam site.",
     impact:
-      "The festival environment supported both community participation and visible partner presence. Verified attendance and partner results will be added when supplied.",
-    services: ["Festival experience", "Brand activation", "Audience planning", "Event delivery"],
+      "The event created a shared cultural moment for Newcastle audiences and established the foundation for the festival's following edition.",
+    services: ["Festival experience", "Audience planning", "Live-event support", "Event delivery"],
     cover: "/media/amcor-07.webp",
     featuredOnHome: true,
     gallery: [
       { src: "/media/amcor-07.webp", alt: "Live performer at the Newcastle Amcor Dam Music Festival", portrait: true },
       { src: "/media/amcor-08.webp", alt: "Newcastle Amcor Dam Music Festival 2023 event artwork" },
+    ],
+  },
+  {
+    slug: "newcastle-amcor-dam-festival-2024",
+    title: "Newcastle Amcor Dam Music Festival — 2024",
+    shortTitle: "Amcor Dam Festival — 2024",
+    client: "Newcastle Amcor Dam Music Festival",
+    year: "2024",
+    location: "Newcastle, KwaZulu-Natal",
+    category: "Festival and Activation",
+    summary:
+      "The 2024 edition expanded the Amcor Dam experience through family activity, hospitality and visible partner activations across the outdoor festival site.",
+    brief:
+      "Build a welcoming festival experience for varied audiences while giving commercial partners clear, useful opportunities to participate in the day.",
+    response:
+      "Which Way brought together family activity, partner touchpoints, hospitality and audience moments across the outdoor site.",
+    impact:
+      "The 2024 festival environment supported community participation while giving partners a clear and useful presence within the experience.",
+    services: ["Festival experience", "Brand activation", "Audience planning", "Event delivery"],
+    cover: "/media/amcor-06.webp",
+    featuredOnHome: true,
+    gallery: [
       { src: "/media/amcor-06.webp", alt: "Brand activation team at the Newcastle Amcor Dam Music Festival" },
       { src: "/media/amcor-04.webp", alt: "Partner hospitality activation at the outdoor festival" },
       { src: "/media/amcor-03.webp", alt: "Family activity area at the Newcastle Amcor Dam Music Festival" },

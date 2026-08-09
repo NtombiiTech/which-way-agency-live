@@ -16,25 +16,29 @@ export const metadata: Metadata = {
 export default function TalentPage() {
   return (
     <article className="talent-profile">
-      <section className="talent-profile-hero">
-        <div className="shell talent-profile-hero-grid">
-          <Reveal className="talent-profile-portrait">
+      <header className="shell interior-heading talent-heading">
+        <Reveal>
+          <p className="eyebrow">Artist management · Which Way</p>
+          <h1><span>L’vovo</span><span>Derrango</span></h1>
+          <p>Award-winning kwaito artist, performer and entertainer.</p>
+        </Reveal>
+      </header>
+
+      <section className="shell talent-profile-intro">
+          <Reveal className="talent-profile-portrait talent-profile-portrait-inline">
             <Image
               src="/talent/lvovo-derrango.webp"
               alt="L’vovo Derrango"
               fill
               priority
-              sizes="(max-width: 767px) 100vw, 55vw"
+              sizes="(max-width: 767px) 100vw, 48vw"
               className="media-cover"
             />
-            <div className="talent-profile-image-shade" aria-hidden="true" />
           </Reveal>
-          <Reveal className="talent-profile-hero-copy" delay={0.08}>
-            <p className="eyebrow">Artist management · Which Way</p>
-            <h1><span>L’vovo</span><span>Derrango</span></h1>
-            <p>Award-winning kwaito artist, performer and entertainer.</p>
+          <Reveal className="talent-profile-intro-copy" delay={0.08}>
+            <p className="eyebrow">A defining voice in South African kwaito</p>
+            <p>From Newcastle to national stages, his story carries history, cultural recognition and an unmistakable connection with South African audiences.</p>
           </Reveal>
-        </div>
       </section>
 
       <section className="talent-editorial shell">

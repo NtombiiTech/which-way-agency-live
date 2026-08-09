@@ -12,14 +12,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="about-hero">
-        <Image src="/videos/hero-desktop-poster.webp" alt="Which Way Agency brand film" fill priority sizes="100vw" className="media-cover" />
-        <div className="about-hero-overlay" aria-hidden="true" />
-        <Reveal className="shell about-hero-copy">
+      <header className="shell interior-heading about-heading">
+        <Reveal>
           <p className="eyebrow">About Which Way</p>
           <h1>Direction for ideas that deserve to be felt.</h1>
         </Reveal>
-      </section>
+      </header>
 
       <section className="section shell about-intro">
         <Reveal>
