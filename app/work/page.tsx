@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
-import { projects } from "@/lib/projects";
+import { projects, type Project } from "@/lib/projects";
 
-const imageLedProjects = projects.filter((project) => project.slug !== "sphe-d-and-friends");
+const workPageOrder = [
+  "rnb-soulful-groove-2026",
+  "jz-foundation-christmas-programme-2025",
+  "rnb-soulful-groove-december-2025",
+  "rnb-soulful-groove-june-2025",
+  "mercedes-benz-mental-health-workshop",
+  "community-giving-initiative-2025",
+  "rnb-soulful-groove-december-2024",
+  "newcastle-amcor-dam-festival-2023",
+];
+
+const imageLedProjects = workPageOrder
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is Project => Boolean(project));
 
 export const metadata: Metadata = {
   title: "Our Work",

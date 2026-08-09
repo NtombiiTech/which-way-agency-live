@@ -15,7 +15,7 @@ const services = [
   "Community Impact",
 ];
 
-const fieldProjects = projects.filter((project) => project.gallery.length > 0);
+const fieldProjects = projects.filter((project) => project.featuredOnHome);
 
 function ProjectGallery({ project, index }: { project: Project; index: number }) {
   return (
