@@ -6,6 +6,8 @@ import { projects, type Project } from "@/lib/projects";
 const workPageOrder = [
   "rnb-soulful-groove-2026",
   "jz-foundation-christmas-programme-2025",
+  "indumezulu-maskandi-festival-2025",
+  "newcastle-annual-spring-horse-race",
   "rnb-soulful-groove-december-2025",
   "rnb-soulful-groove-june-2025",
   "mercedes-benz-mental-health-workshop",

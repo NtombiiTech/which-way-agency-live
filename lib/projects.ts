@@ -184,6 +184,57 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "indumezulu-maskandi-festival-2025",
+    title: "Indumezulu Maskandi Festival 2025",
+    shortTitle: "Indumezulu Maskandi Festival",
+    client: "Indumezulu Maskandi Festival",
+    year: "5 April 2025",
+    location: "Newcastle Farmers Hall Ground, KwaZulu-Natal",
+    category: "Festival Planning and Coordination",
+    summary:
+      "A Newcastle festival centred on Maskandi music, local talent and a shared celebration of KwaZulu-Natal culture.",
+    brief:
+      "Help shape the festival plan and coordinate the practical details needed to bring artists, audiences and the event programme together at Newcastle Farmers Hall Ground.",
+    response:
+      "Which Way supported the organising team through event planning, programme coordination and the preparation required to move the festival from concept towards delivery.",
+    impact:
+      "The work created a clear foundation for a locally rooted cultural event, with space for established performers, emerging artists and Newcastle audiences to meet around Maskandi music.",
+    services: ["Event planning", "Festival coordination", "Programme support", "Organising support"],
+    cover: "/media/indumezulu-maskandi-festival-2025.webp",
+    gallery: [
+      {
+        src: "/media/indumezulu-maskandi-festival-2025.webp",
+        alt: "Indumezulu Maskandi Festival event announcement for 5 April 2025 in Newcastle",
+        portrait: true,
+      },
+    ],
+  },
+  {
+    slug: "newcastle-annual-spring-horse-race",
+    title: "Newcastle Annual Spring Horse Race",
+    shortTitle: "Newcastle Spring Horse Race",
+    client: "Newcastle Annual Spring Horse Race",
+    year: "2025",
+    location: "Newcastle, KwaZulu-Natal",
+    category: "Event Consulting and Planning",
+    summary:
+      "Strategic and creative planning support for a distinctive Newcastle event bringing horse racing, fashion and public spectacle into one experience.",
+    brief:
+      "Contribute ideas and planning guidance that could strengthen the event concept, audience experience and public-facing moments around the annual spring horse race.",
+    response:
+      "Which Way worked in a consulting role, helping the organising team develop ideas, shape the experience and think through the planning needed to connect the race, fashion and community programme.",
+    impact:
+      "The collaboration gave the event team a clearer creative direction and a stronger planning framework for an experience with a recognisable Newcastle character.",
+    services: ["Event consulting", "Concept development", "Experience planning", "Creative direction"],
+    cover: "/media/newcastle-annual-spring-horse-race.webp",
+    gallery: [
+      {
+        src: "/media/newcastle-annual-spring-horse-race.webp",
+        alt: "Fashion procession through Newcastle during the annual spring horse race campaign",
+      },
+    ],
+  },
+  {
     slug: "rnb-soulful-groove-june-2025",
     title: "R&B & Soulful Groove Gathering — June 2025",
     shortTitle: "R&B & Soulful Groove — June 2025",
