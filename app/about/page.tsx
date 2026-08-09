@@ -58,7 +58,7 @@ export default function AboutPage() {
       <section className="section shell founder-profile">
         <Reveal className="founder-portrait">
           <Image
-            src="/brand/founder-boxer-ngwenya.webp"
+            src="/brand/founder-boxer-ngwenya-2026.webp"
             alt="Boxer Ngwenya, founder of Which Way Agency"
             fill
             sizes="(max-width: 767px) 100vw, 42vw"
