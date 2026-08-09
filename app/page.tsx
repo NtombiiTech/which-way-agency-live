@@ -63,7 +63,7 @@ export default function HomePage() {
       <section className="shell home-services-first" aria-labelledby="home-services-heading">
           <Reveal className="home-services-statement">
             <p className="eyebrow">What we do</p>
-            <h1 id="home-services-heading">We build culture through experiences.</h1>
+            <h2 id="home-services-heading">We build culture through experiences.</h2>
             <p>
               We bring strategy, creativity and production together to create moments people feel,
               share and remember.
@@ -108,34 +108,6 @@ export default function HomePage() {
           </div>
       </section>
 
-      <section className="home-founder" aria-labelledby="home-founder-heading">
-        <div className="shell home-founder-grid">
-          <Reveal className="home-founder-portrait">
-            <Image
-              src="/brand/founder-boxer-ngwenya-2026.webp"
-              alt="Boxer Ngwenya, founder of Which Way Agency"
-              fill
-              sizes="(max-width: 767px) 100vw, 48vw"
-              className="media-cover"
-            />
-          </Reveal>
-          <Reveal className="home-founder-copy" delay={0.08}>
-            <p className="eyebrow">Our founder</p>
-            <h2 id="home-founder-heading">Boxer Ngwenya</h2>
-            <p className="home-founder-role">Founder &amp; Creative Director</p>
-            <blockquote>
-              “Which Way is a home for ideas, talent, brands and experiences that bring people
-              together.”
-            </blockquote>
-            <Link className="button button-primary" href="/about">
-              Meet Boxer <ArrowRight weight="bold" aria-hidden="true" />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      <FestivalHighlights />
-
       <section className="home-talent" aria-labelledby="home-talent-heading">
         <div className="shell home-talent-grid">
           <Reveal className="home-talent-portrait">
@@ -163,17 +135,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      <FestivalHighlights />
+
+      <section className="home-founder" aria-labelledby="home-founder-heading">
+        <div className="shell home-founder-grid">
+          <Reveal className="home-founder-portrait">
+            <Image
+              src="/brand/founder-boxer-ngwenya-2026.webp"
+              alt="Boxer Ngwenya, founder of Which Way Agency"
+              fill
+              sizes="(max-width: 767px) 100vw, 48vw"
+              className="media-cover"
+            />
+          </Reveal>
+          <Reveal className="home-founder-copy" delay={0.08}>
+            <p className="eyebrow">Our founder</p>
+            <h2 id="home-founder-heading">Boxer Ngwenya</h2>
+            <p className="home-founder-role">Founder &amp; Creative Director</p>
+            <blockquote>
+              “Which Way is a home for ideas, talent, brands and experiences that bring people
+              together.”
+            </blockquote>
+            <Link className="text-link home-founder-link" href="/about">
+              Meet Boxer <ArrowRight weight="bold" aria-hidden="true" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
       <TrustedPartners />
 
       <section className="home-close">
         <Image src="/brand/concrete.webp" alt="" fill sizes="100vw" className="media-cover" />
         <div className="home-close-overlay" aria-hidden="true" />
         <Reveal className="shell home-close-copy">
-          <p className="home-close-kicker">Have a project in mind?</p>
-          <h2>Your next experience starts with a clear direction.</h2>
+          <p className="home-close-kicker">Have a brief in mind?</p>
+          <h2>Let&apos;s shape<br />what happens next.</h2>
+          <p className="home-close-description">
+            Whether it&apos;s a brand experience, live event, creative campaign or artist partnership,
+            we&apos;d like to hear about it.
+          </p>
           <Link className="button button-primary" href="/proposal">
             Request proposal <ArrowRight weight="bold" aria-hidden="true" />
           </Link>
+          <Link className="home-close-contact" href="/contact">Contact the agency</Link>
         </Reveal>
       </section>
     </>
