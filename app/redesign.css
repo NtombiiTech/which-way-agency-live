@@ -350,7 +350,7 @@ main:focus { outline: none; }
 
 .case-film-player { border: 0; }
 
-/* One condensed family with genuine lighter weights on every surface. */
+/* The original Anton wordmark style is used throughout the site. */
 :root {
   --font-display: var(--font-agency);
   --font-body: var(--font-agency);
@@ -360,21 +360,4 @@ main:focus { outline: none; }
   --type-label: 400;
 }
 body { font-family: var(--font-agency), Arial, sans-serif; font-weight: 400; }
-h1, h2, h3, .home-service-index strong, .project-copy h3,
-.contact-primary strong, .supporting-services h2, .case-story h2 { font-weight: 400; }
-.hero-copy h1 { font-size: clamp(80px, 11vw, 175px); }
-.home-services-statement h2 { max-width: 12ch; }
-.desktop-nav a, .nav-cta, .button, .text-link, .footer-label,
-.footer-bottom, .project-meta { font-size: .85rem; letter-spacing: .06em; }
-.hero-copy > p, .page-hero p:not(.eyebrow), .home-services-statement > p:not(.eyebrow),
-.service-panel-copy > p, .about-body p, .artist-highlights p,
-.talent-editorial-body p, .case-story p { font-size: 1.15rem; line-height: 1.8; }
-.field input, .field select, .field textarea { font-size: 1.1rem; }
-@media (max-width: 767px) {
-  .hero-copy h1 { font-size: clamp(60px, 16vw, 110px); }
-  .home-services-statement h2 { max-width: none; }
-  .desktop-nav a, .nav-cta, .button, .text-link { font-size: .82rem; }
-  .home-talent-copy h2 { font-size: clamp(56px, 14vw, 82px); }
-  .talent-heading h1 { font-size: clamp(60px, 15vw, 90px); }
-  .hero-copy > p { font-size: 1.1rem; }
-}
+h1, h2, h3, strong { font-weight: 400; }

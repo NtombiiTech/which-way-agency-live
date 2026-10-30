@@ -6,8 +6,7 @@ import "./globals.css";
 import "./redesign.css";
 
 const agencyFont = localFont({
-  src: "./fonts/oswald.ttf",
-  weight: "200 700",
+  src: "./fonts/anton.ttf",
   variable: "--font-agency",
   display: "swap",
 });
