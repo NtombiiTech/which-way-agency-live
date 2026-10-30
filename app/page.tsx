@@ -55,8 +55,7 @@ export default function HomePage() {
 
       <section className="shell home-services-first" aria-labelledby="home-services-heading">
           <Reveal className="home-services-statement">
-            <h2 id="home-services-heading">Ideas. People.
-Culture.</h2>
+            <h2 id="home-services-heading">Ideas. People. Culture.</h2>
             <p>
               We are a South African creative agency connecting brands, talent and culture. From campaign thinking to the live experience, we give good ideas a direction.
             </p>

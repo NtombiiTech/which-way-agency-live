@@ -309,3 +309,43 @@ main:focus { outline: none; }
   .home-talent-copy, .home-founder-copy, .home-services-statement, .partners-heading, .festival-film-copy { align-items: center; }
   .home-talent-copy .button, .home-founder-copy .text-link { margin-inline: auto; }
 }
+
+/* Open compositions: spacing separates content instead of divider rules. */
+.site-header, .nav-cta, .text-link, .home-service-index,
+.home-service-index > div, .home-field, .field-project-heading,
+.field-project-heading > a, .home-talent, .home-founder, .festival-intro,
+.festival-film, .festival-case-link, .partners-section, .services-jump,
+.service-panel, .services-stack.has-motion .service-panel,
+.service-panel-copy ul, .supporting-services, .case-story > div,
+.case-next, .case-facts > div, .case-services, .talent-editorial-section,
+.contact-primary > a, .contact-actions > div, .footer-lead,
+.footer-bottom, .site-footer { border: 0; }
+.home-services-statement h2 { white-space: normal; }
+.home-service-index { display: grid; gap: 8px; }
+@media (max-width: 767px) {
+  :root { --shell: calc(100% - 32px); }
+  .home-services-first { padding-block: 68px 80px; gap: 48px; }
+  .home-services-statement { width: 100%; max-width: none; }
+  .home-services-statement h2 { width: 100%; max-width: none; font-size: clamp(42px, 12vw, 72px); line-height: 1.12; letter-spacing: 0; }
+  .home-services-statement > p:not(.eyebrow) { max-width: none; width: 100%; margin-top: 26px; line-height: 1.8; }
+  .home-services-statement .text-link { margin-top: 24px; }
+  .home-service-index { gap: 16px; }
+  .home-service-index a { min-height: 52px; padding-block: 10px; }
+  .home-service-index strong { font-size: clamp(20px, 5.5vw, 25px); line-height: 1.45; }
+  .field-intro h2, .partners-heading h2, .festival-intro h2,
+  .page-hero h1, .interior-heading h1, .case-header h1,
+  .service-panel-copy h2, .talent-closing h2 { max-width: none; width: 100%; line-height: 1.14; }
+  .page-hero h1, .interior-heading h1, .case-header h1 { font-size: clamp(46px, 12vw, 74px); }
+  .home-talent-copy h2 { font-size: clamp(64px, 17vw, 95px); line-height: 1.14; }
+  .home-talent-role, .home-talent-statement, .field-intro > p,
+  .festival-film-description, .partners-heading > p,
+  .service-panel-copy > p, .page-hero p { max-width: none; }
+  .service-panel-copy { padding-top: 32px; }
+  .service-panel-copy ul { padding-top: 8px; gap: 20px; }
+  .footer-title { line-height: 1.15; }
+}
+.festival-highlights, .festival-frame, .page-hero, .interior-heading,
+.case-header, .talent-closing, .founder-profile, .contact-primary,
+.case-film-heading, .case-services > div, .case-facts { border: 0; }
+
+.case-film-player { border: 0; }
