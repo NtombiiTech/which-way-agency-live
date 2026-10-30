@@ -3,45 +3,14 @@ import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/Reveal";
 import { ServicePanel } from "@/components/ServicePanel";
+import { services } from "@/lib/services";
 import { ServicesStack } from "@/components/ServicesStack";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Creative solutions, brand experiences, events, activations, strategic storytelling and community impact.",
+  description: "Creative direction, talent bookings, event concepts, brand activations, pop-ups, music and lifestyle events, red carpet experiences and campaign ideas.",
 };
 
-const services = [
-  {
-    title: "Creative Solutions",
-    copy: "We turn an open brief into a clear creative direction, campaign idea or experience concept people can understand and act on.",
-    capabilities: ["Creative direction", "Concept development", "Campaign thinking", "Experience design"],
-    image: "/media/rnb-03.webp",
-  },
-  {
-    title: "Brand Experiences",
-    copy: "We create physical moments where a brand can be seen, felt and remembered through meaningful audience participation.",
-    capabilities: ["Experience strategy", "Pop-up environments", "Guest journeys", "Partner integration"],
-    image: "/media/amcor-06.webp",
-  },
-  {
-    title: "Events and Activations",
-    copy: "We connect production, programme flow, suppliers and people into one coordinated live experience.",
-    capabilities: ["Event production", "Brand activations", "Technical coordination", "On-site delivery"],
-    image: "/media/mercedes-01.webp",
-  },
-  {
-    title: "Strategic Storytelling",
-    copy: "We find the strongest thread in your message and shape it across content, campaigns and real-world experiences.",
-    capabilities: ["Narrative strategy", "Campaign messaging", "Content direction", "Audience framing"],
-    image: "/media/rnb-02.webp",
-  },
-  {
-    title: "Community Impact",
-    copy: "We build initiatives with communities, not simply around them, making participation and local relevance part of the plan.",
-    capabilities: ["Community engagement", "Programme concepts", "Stakeholder coordination", "Impact storytelling"],
-    image: "/media/amcor-03.webp",
-  },
-];
 
 export default function ServicesPage() {
   return (
@@ -49,17 +18,19 @@ export default function ServicesPage() {
       <section className="page-hero shell services-hero">
         <Reveal>
           <p className="eyebrow">What we do</p>
-          <h1>One idea. Every detail connected.</h1>
-          <p>Strategy, creativity and production shaped as one experience from concept to delivery.</p>
+          <h1>Ideas with direction.</h1>
+          <p>From the first idea to the people who bring it to life. Eight ways we connect brands, talent and culture.</p>
         </Reveal>
       </section>
 
+      <nav className="shell services-jump" aria-label="Explore services">{services.map(service => <a key={service.slug} href={`#${service.slug}`}>{service.title}</a>)}</nav>
       <ServicesStack>
         {services.map((service) => (
-          <ServicePanel key={service.title} {...service} />
+          <ServicePanel key={service.title} {...service} capabilities={[...service.capabilities]} />
         ))}
       </ServicesStack>
 
+      <section className="shell supporting-services"><h2>Creative thinking. Lasting impact.</h2><p>Strategic storytelling and community engagement run through our work, connecting the idea to the people and places it matters to.</p></section>
       <section className="section shell services-close">
         <Reveal>
           <h2>Not sure where your brief fits?</h2>

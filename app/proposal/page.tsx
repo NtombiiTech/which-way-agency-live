@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Request a Proposal",
-  description: "Tell Which Way Agency about your project, event or activation and request a tailored proposal.",
+  description: "Tell Which Way Agency about your creative brief, talent booking, campaign, event or activation and request a tailored proposal.",
 };
 
 export default function ProposalPage() {

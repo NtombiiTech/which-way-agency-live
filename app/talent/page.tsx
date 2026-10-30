@@ -101,7 +101,7 @@ export default function TalentPage() {
               </p>
               <p>
                 His collaborations with Zakes Bantwini, Professor, DJ Tira, Danger, Mpumi and
-                Okmalumkoolkat—and his energetic presence on stage and television—have secured his
+                Okmalumkoolkat, along with his energetic presence on stage and television, have secured his
                 place within South African kwaito culture.
               </p>
             </div>

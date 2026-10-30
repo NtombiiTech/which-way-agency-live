@@ -5,15 +5,8 @@ import { FestivalHighlights } from "@/components/FestivalHighlights";
 import { HeroVideo } from "@/components/HeroVideo";
 import { Reveal } from "@/components/Reveal";
 import { TrustedPartners } from "@/components/TrustedPartners";
+import { services } from "@/lib/services";
 import { projects, type Project } from "@/lib/projects";
-
-const services = [
-  "Creative Solutions",
-  "Brand Experiences",
-  "Events and Activations",
-  "Strategic Storytelling",
-  "Community Impact",
-];
 
 const fieldProjects = projects.filter((project) => project.featuredOnHome);
 
@@ -44,7 +37,7 @@ function ProjectGallery({ project, index }: { project: Project; index: number })
                 src={image.src}
                 alt=""
                 fill
-                sizes="(max-width: 767px) 46vw, (max-width: 1199px) 24vw, 22vw"
+                sizes={imageIndex === 0 ? "(max-width: 767px) 100vw, 42vw" : "(max-width: 767px) 46vw, 26vw"}
                 className="media-cover"
               />
             </Link>
@@ -63,10 +56,10 @@ export default function HomePage() {
       <section className="shell home-services-first" aria-labelledby="home-services-heading">
           <Reveal className="home-services-statement">
             <p className="eyebrow">What we do</p>
-            <h2 id="home-services-heading">We build culture through experiences.</h2>
+            <h2 id="home-services-heading">Ideas. People.
+Culture.</h2>
             <p>
-              We bring strategy, creativity and production together to create moments people feel,
-              share and remember.
+              We are a South African creative agency connecting brands, talent and culture. From campaign thinking to the live experience, we give good ideas a direction.
             </p>
             <Link className="text-link" href="/services">
               Explore all services <ArrowRight weight="bold" aria-hidden="true" />
@@ -75,10 +68,10 @@ export default function HomePage() {
 
           <nav className="home-service-index" aria-label="What we do">
             {services.map((service, index) => (
-              <Reveal key={service} delay={index * 0.045}>
-                <Link href="/services">
+              <Reveal key={service.slug} delay={index * 0.045}>
+                <Link href={`/services#${service.slug}`}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{service}</strong>
+                  <strong>{service.title}</strong>
                   <ArrowUpRight weight="bold" aria-hidden="true" />
                 </Link>
               </Reveal>
@@ -90,8 +83,8 @@ export default function HomePage() {
           <div className="shell">
             <Reveal className="field-intro">
               <p className="eyebrow">The field</p>
-              <h2 id="field-heading">The work, up close.</h2>
-              <p>Real rooms, real people and the details that turn an idea into an experience.</p>
+              <h2 id="field-heading">Out in the world.</h2>
+              <p>The ideas we shaped. The spaces we built. The people who brought them to life.</p>
             </Reveal>
 
             <div className="field-projects">
@@ -121,7 +114,7 @@ export default function HomePage() {
             <div className="home-talent-image-shade" aria-hidden="true" />
           </Reveal>
           <Reveal className="home-talent-copy" delay={0.08}>
-            <p className="eyebrow">New signing</p>
+            <p className="eyebrow">Talent, with a point of view</p>
             <h2 id="home-talent-heading"><span>L’vovo</span><span>Derrango</span></h2>
             <p className="home-talent-role">A defining voice in South African kwaito.</p>
             <p className="home-talent-statement">
@@ -149,7 +142,7 @@ export default function HomePage() {
             />
           </Reveal>
           <Reveal className="home-founder-copy" delay={0.08}>
-            <p className="eyebrow">Our founder</p>
+            <p className="eyebrow">The why</p>
             <h2 id="home-founder-heading">Boxer Ngwenya</h2>
             <p className="home-founder-role">Founder &amp; Creative Director</p>
             <blockquote>
@@ -165,22 +158,7 @@ export default function HomePage() {
 
       <TrustedPartners />
 
-      <section className="home-close">
-        <Image src="/brand/concrete.webp" alt="" fill sizes="100vw" className="media-cover" />
-        <div className="home-close-overlay" aria-hidden="true" />
-        <Reveal className="shell home-close-copy">
-          <p className="home-close-kicker">Have a brief in mind?</p>
-          <h2>Let&apos;s shape<br />what happens next.</h2>
-          <p className="home-close-description">
-            Whether it&apos;s a brand experience, live event, creative campaign or artist partnership,
-            we&apos;d like to hear about it.
-          </p>
-          <Link className="button button-primary" href="/proposal">
-            Request proposal <ArrowRight weight="bold" aria-hidden="true" />
-          </Link>
-          <Link className="home-close-contact" href="/contact">Contact the agency</Link>
-        </Reveal>
-      </section>
+
     </>
   );
 }

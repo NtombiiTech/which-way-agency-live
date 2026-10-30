@@ -5,12 +5,13 @@ type ServicePanelProps = {
   copy: string;
   capabilities: string[];
   image: string;
+  slug: string;
 };
 
-export function ServicePanel({ title, copy, capabilities, image }: ServicePanelProps) {
+export function ServicePanel({ title, copy, capabilities, image, slug }: ServicePanelProps) {
   return (
     <div className="service-panel-stage">
-      <article className="service-panel">
+      <article className="service-panel" id={slug}>
         <div className="service-panel-media">
           <Image
             src={image}

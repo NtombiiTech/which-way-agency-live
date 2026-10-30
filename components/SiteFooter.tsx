@@ -19,6 +19,7 @@ export function SiteFooter() {
           <p className="footer-label">Contact</p>
           <a href="mailto:info@whichwayagency.co.za">info@whichwayagency.co.za</a>
           <a href="tel:+27100113909">010 011 3909</a>
+          <div className="footer-socials"><a href="https://instagram.com/whichwayagency" target="_blank" rel="noreferrer">Instagram</a><a href="https://facebook.com/whichwayagency" target="_blank" rel="noreferrer">Facebook</a><a href="https://tiktok.com/@whichwayagency" target="_blank" rel="noreferrer">TikTok</a></div>
         </div>
         <div>
           <p className="footer-label">Navigate</p>

@@ -22,7 +22,7 @@ export default function AboutPage() {
       <section className="section shell about-intro">
         <Reveal>
           <p className="about-lead">
-            Which Way Agency helps brands, businesses, organisations and communities turn meaningful ideas into unforgettable experiences.
+            Which Way is a South African creative agency. We connect brands, talent and culture through creative direction, campaign ideas and experiences that bring people together.
           </p>
         </Reveal>
         <Reveal className="about-body" delay={0.08}>

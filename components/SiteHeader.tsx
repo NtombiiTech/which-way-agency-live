@@ -20,6 +20,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -32,6 +33,19 @@ export function SiteHeader() {
     if (!open) return;
 
     function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Tab") {
+        const controls = Array.from(headerRef.current?.querySelectorAll<HTMLElement>("a[href], button") ?? [])
+          .filter(element => element.getClientRects().length > 0);
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
       if (event.key !== "Escape") return;
       setOpen(false);
       requestAnimationFrame(() => menuButtonRef.current?.focus());
@@ -42,14 +56,14 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="site-header">
+    <header ref={headerRef} className="site-header">
       <div className="shell nav-shell">
-        <Link className="brand-link" href="/" aria-label="Which Way Agency home">
+        <Link className="brand-link" href="/" aria-label="Which Way Agency home" onClick={() => setOpen(false)}>
           <Image
-            src="/brand/which-way-logo.png"
+            src="/brand/original-mark.png"
             alt="Which Way Agency"
-            width={460}
-            height={88}
+            width={100}
+            height={100}
             priority
             className="brand-logo"
           />

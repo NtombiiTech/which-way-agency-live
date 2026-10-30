@@ -3,6 +3,8 @@
 import { ArrowRight, CheckCircle, WarningCircle } from "@phosphor-icons/react";
 import { FormEvent, useState } from "react";
 
+import { services, legacyServices } from "@/lib/services";
+
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export function ProposalForm() {
@@ -37,7 +39,7 @@ export function ProposalForm() {
   }
 
   return (
-    <form className="proposal-form" onSubmit={submit} noValidate>
+    <form className="proposal-form" onSubmit={submit}>
       <div className="form-grid">
         <Field label="Your name" name="name" autoComplete="name" required />
         <Field label="Work email" name="email" type="email" autoComplete="email" required />
@@ -50,11 +52,8 @@ export function ProposalForm() {
           <span>Service</span>
           <select name="service" defaultValue="" required>
             <option value="" disabled>Select a service</option>
-            <option>Creative Solutions</option>
-            <option>Brand Experiences</option>
-            <option>Events and Activations</option>
-            <option>Strategic Storytelling</option>
-            <option>Community Impact</option>
+            {services.map(service => <option key={service.slug}>{service.title}</option>)}
+            {legacyServices.map(service => <option key={service}>{service}</option>)}
             <option>Not sure yet</option>
           </select>
           <small>Choose the closest fit. We can refine it together.</small>
@@ -73,7 +72,7 @@ export function ProposalForm() {
           <small>A range helps us recommend the right scale.</small>
         </label>
 
-        <Field label="Event or launch date" name="eventDate" type="date" />
+        <Field label="Project or event date" name="eventDate" type="date" />
         <Field label="Location" name="location" autoComplete="address-level2" />
       </div>
 

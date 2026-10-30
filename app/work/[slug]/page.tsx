@@ -36,6 +36,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </Reveal>
       </header>
 
+      <div className="shell case-cover"><Image src={project.cover} alt={project.gallery[0]?.alt || project.title} fill priority sizes="(max-width: 767px) 100vw, 92vw" className="media-cover" /></div>
+
       <section className="section shell case-intro">
         <Reveal className="case-summary">
           <p>{project.summary}</p>
