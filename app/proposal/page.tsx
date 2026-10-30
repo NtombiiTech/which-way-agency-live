@@ -12,7 +12,6 @@ export default function ProposalPage() {
     <>
       <section className="page-hero shell proposal-hero">
         <Reveal>
-          <p className="eyebrow">Start a project</p>
           <h1>Give us the shape of the idea.</h1>
           <p>Share what you know today. We will help clarify the rest and recommend the right way forward.</p>
         </Reveal>

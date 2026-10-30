@@ -14,7 +14,6 @@ export default function AboutPage() {
     <>
       <header className="shell interior-heading about-heading">
         <Reveal>
-          <p className="eyebrow">About Which Way</p>
           <h1>Direction for ideas that deserve to be felt.</h1>
         </Reveal>
       </header>

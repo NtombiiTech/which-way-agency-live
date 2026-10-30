@@ -55,7 +55,6 @@ export default function HomePage() {
 
       <section className="shell home-services-first" aria-labelledby="home-services-heading">
           <Reveal className="home-services-statement">
-            <p className="eyebrow">What we do</p>
             <h2 id="home-services-heading">Ideas. People.
 Culture.</h2>
             <p>
@@ -70,7 +69,6 @@ Culture.</h2>
             {services.map((service, index) => (
               <Reveal key={service.slug} delay={index * 0.045}>
                 <Link href={`/services#${service.slug}`}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
                   <strong>{service.title}</strong>
                   <ArrowUpRight weight="bold" aria-hidden="true" />
                 </Link>
@@ -82,7 +80,6 @@ Culture.</h2>
       <section className="home-field" aria-labelledby="field-heading">
           <div className="shell">
             <Reveal className="field-intro">
-              <p className="eyebrow">The field</p>
               <h2 id="field-heading">Out in the world.</h2>
               <p>The ideas we shaped. The spaces we built. The people who brought them to life.</p>
             </Reveal>
@@ -114,15 +111,13 @@ Culture.</h2>
             <div className="home-talent-image-shade" aria-hidden="true" />
           </Reveal>
           <Reveal className="home-talent-copy" delay={0.08}>
-            <p className="eyebrow">Talent, with a point of view</p>
             <h2 id="home-talent-heading"><span>L’vovo</span><span>Derrango</span></h2>
-            <p className="home-talent-role">A defining voice in South African kwaito.</p>
+            <p className="home-talent-role">Award-winning kwaito artist, performer and entertainer.</p>
             <p className="home-talent-statement">
-              The legacy is established.<br />
-              The next chapter is being written.
+              Available for performances, appearances and brand partnerships.
             </p>
             <Link className="button button-primary" href="/talent">
-              Meet L’vovo <ArrowRight weight="bold" aria-hidden="true" />
+              Enquire about bookings <ArrowRight weight="bold" aria-hidden="true" />
             </Link>
           </Reveal>
         </div>
@@ -142,7 +137,6 @@ Culture.</h2>
             />
           </Reveal>
           <Reveal className="home-founder-copy" delay={0.08}>
-            <p className="eyebrow">The why</p>
             <h2 id="home-founder-heading">Boxer Ngwenya</h2>
             <p className="home-founder-role">Founder &amp; Creative Director</p>
             <blockquote>

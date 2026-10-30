@@ -130,7 +130,6 @@ export function FestivalHighlights() {
     <section ref={sectionRef} className="festival-highlights" aria-labelledby="festival-title">
       <div className="shell festival-intro">
         <div>
-          <p className="festival-kicker">Festival highlights</p>
           <h2 id="festival-title">
             The work behind <span className="festival-title-reel" aria-hidden="true" /> the moment.
           </h2>
@@ -204,7 +203,6 @@ export function FestivalHighlights() {
               </div>
 
               <div className="festival-film-copy">
-                <p className="festival-film-kicker">{film.kicker}</p>
                 <h3>{film.title}</h3>
                 <p className="festival-film-event">{film.event}</p>
                 <p className="festival-film-description">{film.description}</p>

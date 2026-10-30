@@ -32,7 +32,6 @@ export function TrustedPartners() {
   return (
     <section className="partners-section" aria-labelledby="partners-heading">
       <div className="shell partners-heading">
-        <p className="eyebrow">Trusted partners</p>
         <h2 id="partners-heading">Strong ideas travel further together.</h2>
         <p>Brands and organisations that have shared the room, the ambition and the work with us.</p>
       </div>

@@ -31,7 +31,6 @@ export default function WorkPage() {
     <>
       <section className="page-hero shell work-hero">
         <Reveal>
-          <p className="eyebrow">Our work</p>
           <h1>Work built to move people.</h1>
           <p>Full stories from the ideas, teams and live moments that brought each experience to life.</p>
         </Reveal>

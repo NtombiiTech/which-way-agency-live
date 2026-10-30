@@ -260,3 +260,52 @@ main:focus { outline: none; }
 }
 @keyframes agency-arrival { from { opacity: .7; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 767px) { .partner-mark { height: 92px; } .partner-logo { height: 65px; } }
+
+/* Clearer hierarchy without decorative labels; centred mobile compositions. */
+.home-service-index a { grid-template-columns: minmax(0, 1fr) 24px; }
+.hero-copy > p { font-family: var(--font-body), sans-serif; text-transform: none; font-size: clamp(1rem, 1.5vw, 1.2rem); letter-spacing: 0; line-height: 1.6; max-width: 43ch; }
+.field-project-label { font-family: var(--font-body), sans-serif; text-transform: none; letter-spacing: 0; font-size: .85rem; }
+.talent-booking { margin-top: 24px; }
+.talent-profile-intro-copy > p.artist-availability { font-size: 1.05rem; color: var(--muted); line-height: 1.7; letter-spacing: 0; margin-top: 28px; }
+.artist-highlights { padding-block: 100px; }
+.artist-highlights > div { max-width: 760px; margin-inline: auto; }
+.artist-highlights h2 { text-transform: uppercase; font-size: clamp(44px,5vw,72px); line-height: 1.1; }
+.artist-highlights p { color: var(--muted); line-height: 1.85; font-size: 1.1rem; }
+.artist-highlights .text-link { margin-top: 20px; }
+.talent-closing > div > p { color: var(--muted); margin-block: 24px; }
+@media (max-width: 767px) {
+  .hero-copy { align-items: center; text-align: center; padding-bottom: 75px; }
+  .hero-copy > p { max-width: 29ch; font-size: 1rem; margin-inline: auto; }
+  .hero-actions { align-items: center; margin-inline: auto; width: 100%; }
+  .hero-playback { bottom: 14px; right: calc(50% - 22px); }
+  .home-services-statement, .field-intro, .field-project-heading, .home-talent-copy, .home-founder-copy, .festival-intro, .festival-film-copy, .partners-heading, .footer-lead, .page-hero, .interior-heading, .case-header, .service-panel-copy, .supporting-services, .services-close, .about-close, .talent-profile-intro-copy, .artist-highlights h2, .talent-closing, .case-next, .contact-actions, .proposal-aside > h2 { text-align: center; }
+  .home-services-statement h2, .field-intro h2, .partners-heading h2, .festival-intro h2, .page-hero h1, .interior-heading h1, .case-header h1, .service-panel-copy h2, .talent-closing h2 { margin-inline: auto; }
+  .home-services-statement > p, .field-intro > p, .home-talent-role, .home-talent-statement, .home-founder-copy blockquote, .festival-intro-side, .partners-heading > p, .page-hero p, .service-panel-copy > p, .supporting-services p, .services-close p, .talent-closing p { margin-inline: auto; max-width: 34ch; }
+  .home-service-index a { display: flex; align-items: center; justify-content: center; gap: 14px; text-align: center; padding-inline: 0; }
+  .home-service-index a:hover { padding-left: 0; }
+  .home-service-index strong { font-size: 19px; }
+  .field-project-heading h3 { margin-inline: auto; }
+  .field-project-heading > a { justify-content: center; }
+  .home-founder-copy blockquote { margin-inline: auto; }
+  .festival-intro-side { display: block; }
+  .festival-film-copy h3 { margin-inline: auto; max-width: 16ch; }
+  .festival-film-description { max-width: 34ch; margin-inline: auto; }
+  .footer-title { justify-content: center; align-items: center; }
+  .services-jump { justify-content: center; text-align: center; }
+  .service-panel-copy { align-items: center; }
+  .service-panel-copy ul { width: 100%; }
+  .services-close, .about-close, .case-next { justify-content: center; align-items: center; }
+  .values-grid { text-align: center; }
+  .founder-note { text-align: center; }
+  .founder-note blockquote { margin-inline: auto; }
+  .artist-highlights { padding-block: 60px; }
+  .artist-highlights p { font-size: 1rem; }
+  .artist-highlights .text-link { display: flex; width: fit-content; margin-inline: auto; }
+  .talent-profile-intro-copy > p { max-width: 32ch; margin-inline: auto; }
+  .talent-closing { display: block; }
+  .contact-actions .button { margin-inline: auto; }
+}
+@media (max-width: 767px) {
+  .home-talent-copy, .home-founder-copy, .home-services-statement, .partners-heading, .festival-film-copy { align-items: center; }
+  .home-talent-copy .button, .home-founder-copy .text-link { margin-inline: auto; }
+}

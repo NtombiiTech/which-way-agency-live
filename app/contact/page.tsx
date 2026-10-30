@@ -13,7 +13,6 @@ export default function ContactPage() {
     <>
       <section className="page-hero shell contact-hero">
         <Reveal>
-          <p className="eyebrow">Contact</p>
           <h1>Tell us what you want people to remember.</h1>
           <p>Share the first thought, the full brief or anything in between. We will help find the right direction.</p>
         </Reveal>

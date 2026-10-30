@@ -31,7 +31,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <Link className="back-link" href="/work">
             <ArrowLeft weight="bold" aria-hidden="true" /> Back to work
           </Link>
-          <p className="eyebrow">{project.category} · {project.year}</p>
           <h1>{project.title}</h1>
         </Reveal>
       </header>

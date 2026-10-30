@@ -78,7 +78,6 @@ export function StoryChapter() {
         <div className="story-wash" aria-hidden="true" />
 
         <div className="shell story-content">
-          <p className="story-kicker">The stories people carry forward</p>
           <h2 id="story-heading" className={`story-lines${storyComplete ? " is-complete" : ""}`}>
             <span className={`story-line${activeStep >= 0 ? " is-revealed" : ""}${activeStep === 0 ? " is-current" : ""}`}>
               Every brand has a

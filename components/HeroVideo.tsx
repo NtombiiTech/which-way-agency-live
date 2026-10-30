@@ -32,7 +32,7 @@ export function HeroVideo() {
       <div className="hero-scrim" aria-hidden="true" />
       <div className="shell hero-copy">
         <h1 id="agency-title"><span>Which Way</span><span>Agency</span></h1>
-        <p>Creative direction. Talent. Events. Culture.</p>
+        <p>A creative agency connecting brands, talent and culture.</p>
         <div className="hero-actions">
           <Link className="button button-primary" href="/work">Explore our work <ArrowUpRight weight="bold" aria-hidden="true" /></Link>
           <Link className="hero-project-link" href="/proposal">Have a brief? Let’s talk <ArrowUpRight aria-hidden="true" /></Link>

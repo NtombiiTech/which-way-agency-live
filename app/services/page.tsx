@@ -17,7 +17,6 @@ export default function ServicesPage() {
     <>
       <section className="page-hero shell services-hero">
         <Reveal>
-          <p className="eyebrow">What we do</p>
           <h1>Ideas with direction.</h1>
           <p>From the first idea to the people who bring it to life. Eight ways we connect brands, talent and culture.</p>
         </Reveal>
