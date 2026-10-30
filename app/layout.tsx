@@ -5,13 +5,12 @@ import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 import "./redesign.css";
 
-const archivo = localFont({
-  src: "./fonts/anton.ttf",
-  variable: "--font-display",
+const agencyFont = localFont({
+  src: "./fonts/oswald.ttf",
+  weight: "200 700",
+  variable: "--font-agency",
   display: "swap",
 });
-const body = localFont({ src: "./fonts/dm-sans.ttf", variable: "--font-body", display: "swap" });
-const mono = localFont({ src: "./fonts/jetbrains-mono.ttf", variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://whichwayagency.co.za"),
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en" className={agencyFont.variable}>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <div className="global-grain" aria-hidden="true" />

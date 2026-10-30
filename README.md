@@ -35,7 +35,7 @@ standard `next build` command automatically.
 ## Visual direction
 
 The full website extends the original Which Way identity: the official W mark,
-Anton display headings, DM Sans body text, JetBrains Mono details, charcoal and
+Oswald Regular throughout headings, body text and navigation, charcoal and
 warm white with restrained ember accents. Fonts are self-hosted in `app/fonts`.
 The visual layer lives in `app/redesign.css`; shared service content is in
 `lib/services.ts`. It includes all eight services published on the original site
